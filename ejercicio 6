@@ -2,18 +2,27 @@ import math
 import numpy as np
 from scipy import special
 import matplotlib.pyplot as plt
+import scipy.constants as cte
 
-U0=int(input("Potencial 0: "))
-a=int(input("Ancho de la rampa: "))
+U0=float(input("Potencial 0: "))
+a=float(input("Ancho de la rampa: "))
+E=float(input("Energia de la particula: "))
 z=U0/a
-x = np.linspace(0, z, 10000)
 
-ai, aip, bi, bip = special.airy(x)
 
-import matplotlib.pyplot as plt
-plt.plot(x, ai, 'r', label='Ai(x)')
-plt.plot(x, bi, 'b--', label='Bi(x)')
-plt.ylim(-10, 10)
-plt.grid()
-plt.legend(loc='upper left')
-plt.show()
+x = np.linspace(0-, z, 10000)
+u=((2*cte.m_e*a**2)/(cte.hbar*U0)**2)**(1/3)*(-E+U0/a*x)
+
+if x<0
+
+elseif x>z
+
+else
+  ai, aip, bi, bip = special.airy(u)
+  plt.plot(x, ai, 'r', label='Ai(u)')
+  plt.plot(x, bi, 'b--', label='Bi(u)')
+  plt.ylim(0, z+1)
+  plt.xlim(0, 10)
+  plt.grid()
+  plt.legend(loc='upper left')
+  plt.show()
