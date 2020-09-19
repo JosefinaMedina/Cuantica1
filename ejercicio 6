@@ -1,0 +1,19 @@
+import math
+import numpy as np
+from scipy import special
+import matplotlib.pyplot as plt
+
+U0=int(input("Potencial 0: "))
+a=int(input("Ancho de la rampa: "))
+z=U0/a
+x = np.linspace(0, z, 10000)
+
+ai, aip, bi, bip = special.airy(x)
+
+import matplotlib.pyplot as plt
+plt.plot(x, ai, 'r', label='Ai(x)')
+plt.plot(x, bi, 'b--', label='Bi(x)')
+plt.ylim(-10, 10)
+plt.grid()
+plt.legend(loc='upper left')
+plt.show()
